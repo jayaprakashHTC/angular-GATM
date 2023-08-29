@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
+import { GoogleTagManagerService } from "angular-google-tag-manager";
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { ContactComponent } from './contact/contact.component';
   ],
   providers: [
     {provide: 'googleTagManagerId', useValue: 'GTM-P7Z8W95V'},
+    GoogleTagManagerService
   ],
   bootstrap: [AppComponent]
 })
