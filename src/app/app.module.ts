@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +21,9 @@ import { ContactComponent } from './contact/contact.component';
     NgxGoogleAnalyticsModule.forRoot('G-6E0MX54SD6'),
     NgxGoogleAnalyticsRouterModule
   ],
-  providers: [],
+  providers: [
+    {provide: 'googleTagManagerId', useValue: 'GTM-P7Z8W95V'},
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
