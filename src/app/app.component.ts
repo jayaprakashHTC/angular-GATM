@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
+
+declare const gtag: Function;
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'goole-tag-analytics';
+  constructor(public router: Router) {
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        gtag('config', 'G-6E0MX54SD6', { 'page_path': event.urlAfterRedirects });
+      }
+    })
+  }
 }
